@@ -115,28 +115,28 @@ export default function StudentProfile({ walletAddress }: StudentProfileProps) {
 
   if (loading) {
     return (
-      <div className="bg-white rounded-lg shadow-lg p-8 flex items-center justify-center">
-        <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
+      <div className="bg-[#141414] rounded-lg shadow-lg p-8 flex items-center justify-center border border-[#2A2A2A]">
+        <Loader2 className="w-8 h-8 text-[#FFC700] animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8">
+    <div className="bg-[#141414] rounded-lg shadow-lg p-8 border border-[#2A2A2A]">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center space-x-3">
-          <div className="p-3 bg-blue-100 rounded-lg">
-            <User className="w-6 h-6 text-blue-600" />
+          <div className="p-3 bg-[#1A1A1A] rounded-lg">
+            <User className="w-6 h-6 text-[#FFC700]" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">Student Profile</h2>
-            <p className="text-sm text-gray-600">Manage your academic information</p>
+            <h2 className="text-2xl font-bold text-white">Student Profile</h2>
+            <p className="text-sm text-[#BFBFBF]">Manage your academic information</p>
           </div>
         </div>
         {profile && !isEditing && (
           <button
             onClick={() => setIsEditing(true)}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 bg-[#FFC700] text-black rounded-lg font-medium hover:opacity-90 transition-colors"
           >
             Edit Profile
           </button>
@@ -144,15 +144,15 @@ export default function StudentProfile({ walletAddress }: StudentProfileProps) {
       </div>
 
       {success && (
-        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center">
-          <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-          <span className="text-sm text-green-700">Profile saved successfully!</span>
+        <div className="mb-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg flex items-center">
+          <CheckCircle className="w-5 h-5 text-green-400 mr-3" />
+          <span className="text-sm text-green-300">Profile saved successfully!</span>
         </div>
       )}
 
       {error && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-          <p className="text-sm text-red-700">{error}</p>
+        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
+          <p className="text-sm text-red-300">{error}</p>
         </div>
       )}
 
@@ -160,42 +160,44 @@ export default function StudentProfile({ walletAddress }: StudentProfileProps) {
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-              <div className="flex items-center space-x-2 text-gray-900">
-                <User className="w-4 h-4 text-gray-400" />
+              <label className="block text-sm font-medium text-[#BFBFBF] mb-2">Full Name</label>
+              <div className="flex items-center space-x-2 text-white">
+                <User className="w-4 h-4 text-[#808080]" />
                 <span>{profile.full_name}</span>
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-              <div className="flex items-center space-x-2 text-gray-900">
-                <Mail className="w-4 h-4 text-gray-400" />
+              <label className="block text-sm font-medium text-[#BFBFBF] mb-2">Email</label>
+              <div className="flex items-center space-x-2 text-white">
+                <Mail className="w-4 h-4 text-[#808080]" />
                 <span>{profile.email}</span>
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Institution</label>
-              <div className="flex items-center space-x-2 text-gray-900">
-                <Building2 className="w-4 h-4 text-gray-400" />
+              <label className="block text-sm font-medium text-[#BFBFBF] mb-2">Institution</label>
+              <div className="flex items-center space-x-2 text-white">
+                <Building2 className="w-4 h-4 text-[#808080]" />
                 <span>{profile.institution_name}</span>
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Enrollment Date</label>
-              <div className="flex items-center space-x-2 text-gray-900">
-                <Calendar className="w-4 h-4 text-gray-400" />
+              <label className="block text-sm font-medium text-[#BFBFBF] mb-2">Enrollment Date</label>
+              <div className="flex items-center space-x-2 text-white">
+                <Calendar className="w-4 h-4 text-[#808080]" />
                 <span>{new Date(profile.enrollment_date).toLocaleDateString()}</span>
               </div>
             </div>
           </div>
 
-          <div className="pt-6 border-t border-gray-200">
-            <label className="block text-sm font-medium text-gray-700 mb-2">Wallet Address</label>
-            <div className="bg-gray-50 rounded-lg p-3">
-              <code className="text-sm font-mono text-gray-800 break-all">{profile.wallet_address}</code>
+          <div className="pt-6 border-t border-[#2A2A2A]">
+            <label className="block text-sm font-medium text-[#BFBFBF] mb-2">Wallet Address</label>
+            <div className="bg-[#1A1A1A] rounded-lg p-3">
+              <code className="text-sm font-mono text-[#BFBFBF] break-all">
+                {profile.wallet_address}
+              </code>
             </div>
           </div>
         </div>
@@ -203,7 +205,7 @@ export default function StudentProfile({ walletAddress }: StudentProfileProps) {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-[#BFBFBF] mb-2">
                 Full Name <span className="text-red-500">*</span>
               </label>
               <input
@@ -211,13 +213,13 @@ export default function StudentProfile({ walletAddress }: StudentProfileProps) {
                 required
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#2A2A2A] text-white rounded-lg focus:ring-2 focus:ring-[#FFC700] focus:border-transparent"
                 placeholder="John Doe"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-[#BFBFBF] mb-2">
                 Email <span className="text-red-500">*</span>
               </label>
               <input
@@ -225,20 +227,20 @@ export default function StudentProfile({ walletAddress }: StudentProfileProps) {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#2A2A2A] text-white rounded-lg focus:ring-2 focus:ring-[#FFC700] focus:border-transparent"
                 placeholder="student@university.edu"
               />
             </div>
 
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-[#BFBFBF] mb-2">
                 Institution <span className="text-red-500">*</span>
               </label>
               <select
                 required
                 value={formData.institutionAddress}
                 onChange={handleInstitutionChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 bg-[#0A0A0A] border border-[#2A2A2A] text-white rounded-lg focus:ring-2 focus:ring-[#FFC700] focus:border-transparent"
               >
                 <option value="">Select an authorized institution</option>
                 {institutions.map((inst) => (
@@ -247,14 +249,14 @@ export default function StudentProfile({ walletAddress }: StudentProfileProps) {
                   </option>
                 ))}
               </select>
-              <p className="text-xs text-gray-500 mt-1">
+              <p className="text-xs text-[#808080] mt-1">
                 Only institutions authorized by the platform are available
               </p>
             </div>
           </div>
 
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <p className="text-sm text-blue-800">
+          <div className="bg-[#FFC700]/10 border border-[#FFC700]/30 rounded-lg p-4">
+            <p className="text-sm text-[#FFC700]">
               <strong>Note:</strong> Your wallet address will be linked to this profile. Make sure all information is correct.
             </p>
           </div>
@@ -263,7 +265,7 @@ export default function StudentProfile({ walletAddress }: StudentProfileProps) {
             <button
               type="submit"
               disabled={saving}
-              className="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+              className="flex-1 bg-[#FFC700] text-black py-3 px-4 rounded-lg font-medium hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#FFC700] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
             >
               {saving ? (
                 <>
@@ -289,7 +291,7 @@ export default function StudentProfile({ walletAddress }: StudentProfileProps) {
                     institutionAddress: profile.institution_address,
                   });
                 }}
-                className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors"
+                className="px-6 py-3 bg-[#1A1A1A] text-[#BFBFBF] rounded-lg font-medium hover:bg-[#2A2A2A] transition-colors"
               >
                 Cancel
               </button>
