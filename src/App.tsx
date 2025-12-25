@@ -78,11 +78,9 @@ function App() {
                 className="flex items-center cursor-pointer"
                 onClick={() => setCurrentView('landing')}
               >
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9SDhWvIaGwyyoH9wENFZ4EFEqQCr4UXIVjw&s"
-                  alt="ZK LEDGER Logo"
-                  className="w-8 h-8 rounded-lg object-cover"
-                />
+                <div className="w-8 h-8 bg-[#FFC700] rounded-lg flex items-center justify-center">
+                  <GraduationCap className="w-5 h-5 text-black" />
+                </div>
                 <span className="ml-2 text-xl font-bold text-white">
                   Academic Credentials
                 </span>

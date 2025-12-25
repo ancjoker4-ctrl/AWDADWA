@@ -141,11 +141,7 @@ export default function LoginPage({ onLogin, onBack }: LoginPageProps) {
         <motion.div className="bg-gradient-to-br from-black/60 via-gray-900/50 to-black/60 backdrop-blur-2xl rounded-3xl shadow-2xl p-8 border border-yellow-500/30 shadow-yellow-500/20" variants={containerVariants} initial="hidden" animate="visible">
           <motion.div className="flex items-center justify-center mb-6" variants={itemVariants}>
             <div className="p-3 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-xl shadow-lg shadow-yellow-500/50">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9SDhWvIaGwyyoH9wENFZ4EFEqQCr4UXIVjw&s"
-                alt="ZK LEDGER Logo"
-                className="w-8 h-8 rounded-lg object-cover"
-              />
+              <GraduationCap className="w-8 h-8 text-black" />
             </div>
           </motion.div>
 
