@@ -89,9 +89,10 @@ export default function PricingModal({ userType, userAddress, onClose, onSuccess
       }
 
       if (selectedPlan) {
-        const discountAmount = data.discount_type === 'percentage'
-          ? (selectedPlan.price * data.discount_value) / 100
-          : data.discount_value;
+        const discountAmount =
+          data.discount_type === 'percentage'
+            ? (selectedPlan.price * data.discount_value) / 100
+            : data.discount_value;
 
         setDiscount(discountAmount);
         setError('');
@@ -222,7 +223,7 @@ export default function PricingModal({ userType, userAddress, onClose, onSuccess
                 </div>
               ))}
             </div>
-          ):contentReference[oaicite:0]{index=0} : (
+          ) : (
             <div className="max-w-md mx-auto">
               {error && (
                 <div className="mb-4 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-sm text-red-400">
